@@ -19,7 +19,7 @@ public class NameRepository {
 
 
     public static String[] findAll() {
-        return names.clone();
+        return Arrays.copyOf(names, names.length);
     }
     public static String find(final String fullName){
         for (String name : names){
