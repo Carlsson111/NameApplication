@@ -1,10 +1,12 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 import static se.lexicon.NameRepository.*;
 
 public class Main {
     public static void main(String[] args) {
-        setNames(new String[]{"Eric Svensson", "Jane Smith"});
+        setNames(new String[]{"Eric Svensson", "Jane Smith", "Eric Ericsson", "Harold Ericsson"});
         System.out.println("Number of elements in the array: " + getSize());
 
         System.out.println("All names: " + String.join(", ", findAll()));
@@ -19,8 +21,12 @@ public class Main {
 
         System.out.println("All names after additions: " + String.join(", ", findAll()));
 
+        String[] results = findByFirstName("Eric");
+        System.out.println("Names with first name 'Eric': " + Arrays.toString(results));
+
         clear();
         System.out.println("Number of elements after clearing: " + getSize());
+
     }
 }
 
