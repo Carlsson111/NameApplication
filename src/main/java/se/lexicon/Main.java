@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Find 'Alice Johnson': " + find("Alice Johnson"));
 
         System.out.println("Add 'Alice Johnson': " + add("Alice Johnson"));
-        System.out.println("Add 'John Doe' again: " + add("John Doe"));
+        System.out.println("Add 'John Doe': " + add("John Doe"));
         System.out.println("Add 'John Doe' again: " + add("John Doe"));
 
 
@@ -23,6 +23,15 @@ public class Main {
 
         String[] results = findByFirstName("Eric");
         System.out.println("Names with first name 'Eric': " + Arrays.toString(results));
+
+        String[] ericssonNames = NameRepository.findByLastName("Ericsson");
+        System.out.println("Names with last name 'Ericsson': " + Arrays.toString(ericssonNames));
+
+        boolean updated = NameRepository.update("Jane Smith", "Anders Johansson");
+        System.out.println("Update 'Jane Smith' to 'Anders Johansson': " + updated);
+        System.out.println("Names after update: " + Arrays.toString(NameRepository.findAll()));
+
+
 
         clear();
         System.out.println("Number of elements after clearing: " + getSize());
